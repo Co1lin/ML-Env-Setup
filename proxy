@@ -1,0 +1,9 @@
+PROXY_ADDR=http://test.com:1234
+export HTTP_PROXY=$PROXY_ADDR \
+    http_proxy=$PROXY_ADDR \
+    HTTPS_PROXY=$PROXY_ADDR \
+    https_proxy=$PROXY_ADDR \
+    ALL_PROXY=$PROXY_ADDR \
+    all_proxy=$PROXY_ADDR \
+    no_proxy=
+echo "Proxy set to $PROXY_ADDR"
