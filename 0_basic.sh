@@ -3,9 +3,12 @@
 set -x	# print commands and their arguments as they are executed
 set -e	# exit immediately if anything you're running returns a non-zero return code
 
-# proxy
+# proxy  TODO change its contents!
 cp ./assets/proxy ~/.proxy
 cp ./assets/unproxy ~/.unproxy
+
+# TODO  comment it if not needed!
+source ~/.proxy
 
 # basis
 sudo apt update
@@ -27,21 +30,26 @@ echo -e "set -g mouse on
 chsh -s /bin/zsh
 
 # oh my zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+rm -rf ~/.oh-my-zsh
+yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # configurations of default theme of oh my zsh
 cp ~/.oh-my-zsh/themes/robbyrussell.zsh-theme ~/.oh-my-zsh/themes/robbyrussell.zsh-theme.bak
 cp ./assets/robbyrussell.zsh-theme ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 
 # add zsh plugins
+rm -rf ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+rm -rf ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 cp ./assets/zshrc ~/.zshrc
-source ~/.zshrc
+# zsh
+# source ~/.zshrc
 
 # p10k theme
+rm -rf ~/powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo '\nsource ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
-echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
+echo -e '\nsource ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+echo -e '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
 cp ./assets/p10k.zsh ~/.p10k.zsh
