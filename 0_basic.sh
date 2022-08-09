@@ -20,7 +20,8 @@ set mouse=a
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
-set expandtab' \
+set expandtab
+syntax on' \
 	> ~/.vimrc
 
 echo -e "set -g mouse on
