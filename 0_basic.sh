@@ -14,7 +14,10 @@ source ~/.proxy
 sudo apt update
 sudo apt install -y vim git tmux zsh htop net-tools nload iftop iotop
 
-echo 'set number
+echo \
+'unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+set number
 set mouse=a
 " ref: https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
 filetype plugin indent on
