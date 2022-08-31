@@ -31,7 +31,7 @@ echo -e "set -g mouse on
 	set -g history-limit 50000" \
 	> ~/.tmux.conf
 
-chsh -s /bin/zsh
+sudo chsh -s $(which zsh) $(whoami)
 
 # oh my zsh
 rm -rf ~/.oh-my-zsh
