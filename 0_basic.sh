@@ -4,11 +4,11 @@ set -x	# print commands and their arguments as they are executed
 set -e	# exit immediately if anything you're running returns a non-zero return code
 
 # proxy  TODO change its contents!
-cp ./assets/proxy ~/.proxy
-cp ./assets/unproxy ~/.unproxy
+# cp ./assets/proxy ~/.proxy
+# cp ./assets/unproxy ~/.unproxy
 
 # TODO  comment it if not needed!
-source ~/.proxy
+# source ~/.proxy
 
 # basis
 sudo apt update
