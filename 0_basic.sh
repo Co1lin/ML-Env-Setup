@@ -12,7 +12,7 @@ set -e	# exit immediately if anything you're running returns a non-zero return c
 
 # basis
 sudo apt update
-sudo apt install -y vim curl wget git tmux zsh htop net-tools nload iftop iotop
+sudo apt install -y vim curl wget git tmux zsh htop net-tools nload iftop iotop tree btop neofetch zip unzip acl git-lfs
 
 echo \
 'unlet! skip_defaults_vim
